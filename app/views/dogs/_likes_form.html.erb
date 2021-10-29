@@ -1,0 +1,5 @@
+
+<%= simple_form_for @dog do |f| %>
+  <%= f.hidden_field :likes, value: @dog.likes + 1  %>
+  <%= f.submit '❤️' %>
+<% end %>

@@ -1,1 +1,21 @@
+<p>
+  total dogs
+  <%=@dogs_total %>
+</p>
+
+<div>
+  <p>
+    Sort by:
+    <a href="<%= dogs_path(sort: likes) %>">
+
+    </a >
+  </p>
+</div>
+
+<% ((@dogs_total.to_f / @dogs_per_page).ceil).times do |i| %>
+  <a href="<%= dogs_path(page: i + 1 ) %>">
+    dogs page <%=i + 1%>
+  </a>
+<% end %>
+
 <%= render partial: 'thumbnail', collection: @dogs, as: :dog %>
